@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { DefaultDataServiceConfig, NgrxDataModule } from 'ngrx-data';
 import { entityConfig } from './store/entity-metadata';
+import { AppStoreModule } from './store/app-store.module';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'heroes' },
@@ -23,6 +24,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     CoreModule,
     HttpClientModule,
+    AppStoreModule,
     RouterModule.forRoot(routes),
     NgrxDataModule.forRoot(entityConfig)
   ],
