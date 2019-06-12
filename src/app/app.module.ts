@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
+import { DefaultDataServiceConfig, NgrxDataModule } from 'ngrx-data';
+import { entityConfig } from './store/entity-metadata';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'heroes' },
@@ -21,7 +23,8 @@ const routes: Routes = [
     BrowserAnimationsModule,
     CoreModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgrxDataModule.forRoot(entityConfig)
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
